@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import Counter from "./Counter";
 
 function App() {
   const [posts, setPost] = useState({
@@ -8,13 +7,18 @@ function App() {
     created: ["2월 17일 발행", "3월 18일 발행", "4월 19일 발행"],
   });
 
+  const [titleFirstPost, setTitleFirstPost] = useState("남자 농구 추천");
+
   return (
     <div className="App">
       <div className="black-nav">
         <div>😎 Dayeon's Blog</div>
       </div>
       <div className="list">
-        <Post postName={posts.title[0]} postCreated={posts.created[0]} />
+        <button onClick={() => setTitleFirstPost("여자 농구 추천")}>
+          수정
+        </button>
+        <Post postName={titleFirstPost} postCreated={posts.created[0]} />
         <Post postName={posts.title[1]} postCreated={posts.created[1]} />
         <Post postName={posts.title[2]} postCreated={posts.created[2]} />
       </div>
