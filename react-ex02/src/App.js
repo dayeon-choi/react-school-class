@@ -1,4 +1,5 @@
 import React from "react";
+import NavComponent from "./NavComponent";
 
 // const foodILike = [];
 const foodILike = [
@@ -42,9 +43,9 @@ const foodILike = [
 function App() {
   return (
     <div>
-      <Introduce myName="Dayeon Choi" />
-      {foodILike.map((dish) => (
-        <Food name={dish.name} picture={dish.image} />
+      <NavComponent />
+      {foodILike.map(({ id, name, image, rating }) => (
+        <Food id={id} name={name} picture={image} rating={rating} />
       ))}
     </div>
   );
@@ -58,11 +59,13 @@ function Introduce(props) {
   );
 }
 
-function Food({ name, picture }) {
+function Food({ name, picture, rating }) {
   return (
     <div>
       <h3>I like {name}</h3>
-      <img src={picture} />
+      <h4>{rating}/5.0</h4>
+      <img src={picture} width="200vw" alt={name} />
+      <hr />
     </div>
   );
 }
