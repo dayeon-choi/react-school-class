@@ -7,6 +7,12 @@
   pointer-events: none;
 }
 
+.bg {
+  background-image: url("./img/header-bg1.jpeg");
+  background-position: center;
+  color: #eeeeee;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
